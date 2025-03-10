@@ -4,6 +4,10 @@ import { TYPES } from "../actions/tareasActions";
 
 export const tareasInitialState = []
 
+export const initTareas = ()=>{
+    return JSON.parse(localStorage.getItem('tareas')) || []
+  }
+
 export function tareasReducer(state, action) {
 
 

@@ -1,0 +1,6 @@
+export const TYPES={
+    AGREGAR:"AGREGAR",
+    ELIMINAR: "ELIMINAR",
+    COMPLETADA: "COMPLETADA",
+    
+}

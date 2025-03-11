@@ -30,23 +30,32 @@ const ListaTareas = () => {
   const tareasPendientes = tareas.filter(tarea => !tarea.done).length
 
   return (
-    <div>
-      <h1>Lista de tareas</h1>
-      <div>
-        <h3>N° Tareas: {contadorTareas}</h3>
-        <h3>Pendientes: {tareasPendientes}</h3>
+    <div className="grid justify-center h-screen text-slate-100">
+      <div className="content-center">
+
+      <h1 className="text-center text-3xl m-8">Lista de tareas</h1>
+      <div className="flex justify-between my-6">
+        <h3 className="text-cyan-600 border-b-3  border-cyan-600 ">N° Tareas: {contadorTareas}</h3>
+        <h3 className="text-orange-400 border-b-3  border-orange-600">Pendientes: {tareasPendientes}</h3>
       </div>
-      <form onSubmit={handleSubmit}>
-        <label>Tarea</label>
+      <form onSubmit={handleSubmit} className="text-lg">
+        <label className="mr-2">Tarea:</label>
         <input
+          className="bg-slate-200 text-slate-700 rounded-lg px-2"
           type="text"
           name="title"
           ref={inputRef}
           placeholder="Escribre una tarea.."
         />
-        <input type="submit" value="Agregar" />
+        <input 
+          className="bg-sky-900 p-0.5 border-2 border-sky-700 ml-2 cursor-pointer rounded-lg"
+          type="submit"
+          value="Agregar"
+           />
       </form>
       <Tareas tareas={tareas} dispatch={dispatch} />
+
+      </div>
     </div>
   );
 };

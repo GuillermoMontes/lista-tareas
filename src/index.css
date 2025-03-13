@@ -1,9 +1,13 @@
 @import "tailwindcss";
 
+
 body{
     background-color: oklch(0.208 0.042 265.755);
 }
 
-.prueba{
-    background-color: red;
+.font-task{
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+
 }

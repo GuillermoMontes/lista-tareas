@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import Tareas from "./Tareas";
 
 const ListaTareas = () => {
+
   const inputRef = useRef();
 
   const [tareas, dispatch] = useReducer(
@@ -31,17 +32,21 @@ const ListaTareas = () => {
     inputRef.current.value = "";
   };
 
+  //Local Storage
+
   useEffect(() => {
     localStorage.setItem("tareas", JSON.stringify(tareas));
   }, [tareas]);
+
+  //Contadores
 
   const contadorTareas = tareas.length;
   const tareasPendientes = tareas.filter((tarea) => !tarea.done).length;
   const tareasCompletas = tareas.filter((tarea) => tarea.done).length;
 
   return (
-    //<AnimatePresence>
-    <div className="grid justify-center h-screen text-slate-100 min-w-80 mx-2">
+   
+    <div className="grid justify-center h-screen text-slate-100 min-w-80 mx-2 font-task">
       <div className="content-center">
         <motion.div 
         initial={{
@@ -69,6 +74,8 @@ const ListaTareas = () => {
               Pendientes: {tareasPendientes}
             </h3>
           </div>
+
+          {/*Formulario*/ }
           <form onSubmit={handleSubmit} className="text-lg">
             <label>Tarea: </label>
             <input
@@ -76,7 +83,7 @@ const ListaTareas = () => {
               type="text"
               name="title"
               ref={inputRef}
-              placeholder="Escribre una tarea.."
+              placeholder="Escribre una tarea..."
             />
             <motion.input
               className="bg-sky-900 p-0.5 border-2  border-sky-700 m-2 cursor-pointer rounded-lg"
@@ -92,7 +99,7 @@ const ListaTareas = () => {
 
       </div>
     </div>
-    //    </AnimatePresence>
+    
   );
 };
 

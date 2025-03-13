@@ -7,4 +7,4 @@ ejecutar el comando "npm run dev"
 Los estilos fueron aplicados por la librería **Tailwind css 4.0**
 Para las animaciones se utilizó **Framer Motion**
 ##### Deploy utilizado: **Vercel** 
-link:  [ListaDeTareas](https://indumentaria-retro.vercel.app/)
+link:  [ListaDeTareas](https://lista-tareas-ochre.vercel.app/)

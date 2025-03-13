@@ -33,15 +33,16 @@ const ListaTareas = () => {
     <div className="grid justify-center h-screen text-slate-100">
       <div className="content-center">
 
-      <h1 className="text-center text-3xl m-8">Lista de tareas</h1>
+      <div className="border border-blue-950/50 rounded-2xl p-6 shadow-md shadow-blue-500/50">
+      <h1 className="text-center text-3xl m-4">Lista de tareas</h1>
       <div className="flex justify-between my-6">
-        <h3 className="text-cyan-600 border-b-3  border-cyan-600 ">N° Tareas: {contadorTareas}</h3>
-        <h3 className="text-orange-400 border-b-3  border-orange-600">Pendientes: {tareasPendientes}</h3>
+        <h3 className=" border-b-3  border-cyan-600 ">N° Tareas: {contadorTareas}</h3>
+        <h3 className=" border-b-3  border-orange-600">Pendientes: {tareasPendientes}</h3>
       </div>
       <form onSubmit={handleSubmit} className="text-lg">
         <label className="mr-2">Tarea:</label>
         <input
-          className="bg-slate-200 text-slate-700 rounded-lg px-2"
+          className="bg-slate-200 text-slate-800 rounded-lg px-2"
           type="text"
           name="title"
           ref={inputRef}
@@ -53,6 +54,8 @@ const ListaTareas = () => {
           value="Agregar"
            />
       </form>
+      </div>
+      
       <Tareas tareas={tareas} dispatch={dispatch} />
 
       </div>
